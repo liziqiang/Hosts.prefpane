@@ -24,7 +24,6 @@
 }
 
 - (void)insertObject:(id)object afterArrangedObjectIndex:(NSUInteger)index;
-- (void)alertEnded:(NSAlert *)alert code:(int)aChoice context:(void *) v;
 
 - (IBAction) insertHostEntry: (id)sender;
 - (IBAction) confirmDeleteItem:(id)sender;

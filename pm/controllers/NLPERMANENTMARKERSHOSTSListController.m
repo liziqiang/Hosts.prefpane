@@ -65,17 +65,17 @@
                                                        @"PMHostListController",
                                                        @"deletion: message format string");
     description = [NSString stringWithFormat:description, [entry toString]];
-    NSAlert *alert = [NSAlert alertWithMessageText:title defaultButton:@"Yes" alternateButton:@"No" otherButton:nil informativeTextWithFormat:@"%@", description];
-    
-    [alert beginSheetModalForWindow:[[NSApplication sharedApplication] mainWindow] modalDelegate:self didEndSelector:@selector(alertEnded:code:context:) contextInfo:NULL];
+    NSAlert *alert = [[NSAlert alloc]init];
+    alert.messageText = title;
+    alert.informativeText = description;
+    [alert addButtonWithTitle:@"Yes"];
+    [alert addButtonWithTitle:@"No"];
+    [alert beginSheetModalForWindow:[self.tableView window] completionHandler:^(NSModalResponse returnCode) {
+        if (returnCode == NSAlertFirstButtonReturn) {
+            [self remove:nil];
+        }
+    }];
 }
-
-- (void)alertEnded:(NSAlert *)alert code:(int)aChoice context:(void *) v {
-    if (aChoice == NSAlertFirstButtonReturn) {
-        [self remove:nil];
-    }
-}
-
 
 - (void)insertObject:(id)object afterArrangedObjectIndex:(NSUInteger)index {
     // get selected object and it's index in the content array
