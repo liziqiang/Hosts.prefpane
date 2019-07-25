@@ -4,9 +4,9 @@ A system preference pane to manage your hosts file.
 
 The original repository [specialunderwear/Hosts.prefpane](https://github.com/specialunderwear/Hosts.prefpane)
 
-[![Reeracoen Asia](/README/images/hosts-preference-pane.gif)](https://github.com/gomin2013/Hosts.prefpane/raw/feature/README/download/Hosts.prefPane.zip)
+[![Reeracoen Asia](/screenshots/hosts-preference-pane.gif)](https://github.com/liziqiang/Hosts.prefpane/blob/master/screenshots/hosts-preference-pane.gif)
 
-[`Download`](https://github.com/liziqiang/Hosts.prefpane/blob/master/README/download/Hosts.prefPane.zip?raw=true)
+[`Download`](https://github.com/liziqiang/Hosts.prefpane/blob/master/screenshots/hosts-preference-pane.gif)
 
 <!--
 # Install Python Package Manager.
