@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/Base.lproj/HostsPrefpane.nib</key>
-		<data>
-		zs4T6bTmMz/rA5+Rg+Fr/UInuOI=
-		</data>
 		<key>Resources/HostsPrefpane-icon.tiff</key>
 		<data>
 		XYZbdTfM+IZ5fEjVibNOX7aUqUw=
@@ -16,16 +12,27 @@
 		<data>
 		9/SP7WPYbsMyIIZlwQ+X0Ij4aS8=
 		</data>
+		<key>Resources/en.lproj/HostsPrefpane.nib</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			WBr4m2hIJblQxPHxuuTmhyhIf6s=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			MiLKDDnrUKr4EmuvhS5VQwxHGK8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/Base.lproj/HostsPrefpane.nib</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			9eUiUm6x/wCaoaRy6IrK8bDN7D4TwHrkdVFOAv4jm+c=
-			</data>
-		</dict>
 		<key>Resources/HostsPrefpane-icon.tiff</key>
 		<dict>
 			<key>hash2</key>
@@ -39,6 +46,24 @@
 			<data>
 			ljOS4DjXvqEo5VzGfdaRwgRZPbNScGBmfwyC8PChvmQ=
 			</data>
+		</dict>
+		<key>Resources/en.lproj/HostsPrefpane.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			0s3gjSBs1isJS0KMFNLCqM8go+CnJ3s+MXKen+BJPOw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>Resources/en.lproj/InfoPlist.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Oc8u4Ht7Mz58F50L9NeYpbcq9qTlhPUeZCcDu/pPyCg=
+			</data>
+			<key>optional</key>
+			<true/>
 		</dict>
 	</dict>
 	<key>rules</key>
