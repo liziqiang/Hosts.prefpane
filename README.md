@@ -6,7 +6,7 @@ The original repository [specialunderwear/Hosts.prefpane](https://github.com/spe
 
 [![Reeracoen Asia](/screenshots/hosts-preference-pane.gif)](https://github.com/liziqiang/Hosts.prefpane/blob/master/screenshots/hosts-preference-pane.gif)
 
-[`Download`](https://github.com/liziqiang/Hosts.prefpane/blob/master/screenshots/hosts-preference-pane.gif)
+[`Download`](https://github.com/liziqiang/Hosts.prefpane/blob/master/screenshots/Hosts.prefPane.zip?raw=true)
 
 <!--
 # Install Python Package Manager.
