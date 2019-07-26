@@ -35,9 +35,8 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
     if (self == [NLPERMANENTMARKERSHOSTSFileModel class]) {
         // initialize hosts array
         NLPERMANENTMARKERSHOSTShostsEntries = [NSMutableArray new];
-        
         // initialize hosts default storage.
-        NSData * current_hosts_archive = [NSKeyedArchiver archivedDataWithRootObject:NLPERMANENTMARKERSHOSTShostsEntries];
+        NSData * current_hosts_archive = [NSKeyedArchiver archivedDataWithRootObject:NLPERMANENTMARKERSHOSTShostsEntries requiringSecureCoding:NO error:nil];
         NSMutableDictionary *defaults = [NSMutableDictionary dictionaryWithObject:current_hosts_archive forKey:PMHOSTS_DEFAULTS_KEY];
         [[NSUserDefaults standardUserDefaults] registerDefaults:defaults];
     }
@@ -117,7 +116,7 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
 - (BOOL)tableView:(NSTableView *)tv writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard*)pboard
 {
     // Copy the row numbers to the pasteboard.
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes requiringSecureCoding:NO error:nil];
     [pboard declareTypes:[NSArray arrayWithObject:PM_HOST_ENTRY_DATA_TYPE] owner:self];
     [pboard setData:data forType:PM_HOST_ENTRY_DATA_TYPE];
     return YES;
@@ -138,7 +137,7 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
 {
     NSPasteboard* pboard = [info draggingPasteboard];
     NSData* rowData = [pboard dataForType:PM_HOST_ENTRY_DATA_TYPE];
-    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:rowData];
+    NSIndexSet* rowIndexes = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSIndexSet class] fromData:rowData error:nil];
     NSInteger dragRow = [rowIndexes firstIndex];
     
     // Move the specified row to its new location...
@@ -168,7 +167,7 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
     // disable sudden termination to make sure that we don't get the defaults and /etc/hosts running out of sync.
     [[NSProcessInfo processInfo] disableSuddenTermination];
     // update stored defaults
-    NSData * current_hosts_archive = [NSKeyedArchiver archivedDataWithRootObject:NLPERMANENTMARKERSHOSTShostsEntries];
+    NSData * current_hosts_archive = [NSKeyedArchiver archivedDataWithRootObject:NLPERMANENTMARKERSHOSTShostsEntries requiringSecureCoding:NO error:nil];
     [[NSUserDefaults standardUserDefaults] setObject:current_hosts_archive forKey:PMHOSTS_DEFAULTS_KEY];
     
     // update /etc/hosts
@@ -181,7 +180,7 @@ NSMutableArray * NLPERMANENTMARKERSHOSTShostsEntries;
 #pragma mark private methods
 - (void) insertInactiveItems:(NSMutableArray *)parsed_data {
     NSData * stored_items_data = [[NSUserDefaults standardUserDefaults] objectForKey:PMHOSTS_DEFAULTS_KEY];
-    NSMutableArray * stored_items = [NSKeyedUnarchiver unarchiveObjectWithData:stored_items_data];
+    NSMutableArray * stored_items = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableArray class] fromData:stored_items_data error:nil];
     [stored_items enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         if ([[obj use] integerValue] == NSControlStateValueOff) {
             @try {
